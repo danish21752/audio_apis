@@ -9,4 +9,22 @@ services:
     volumes:
       - ./app:/app
     command: >
-      sh -c "python manage.py runserver 0.0.0.0:8000"
+      sh -c "python manage.py wait_for_db &&
+             python manage.py migrate &&
+             python manage.py runserver 0.0.0.0:8002"
+    environment:
+      - DB_HOST=db
+      - DB_NAME=music
+      - DB_USER=music
+      - DB_PASS=music
+    depends_on:
+      - db
+    links:
+      - db
+
+  db:
+    image: postgres:10-alpine
+    environment:
+      - POSTGRES_DB=music
+      - POSTGRES_USER=music
+      - POSTGRES_PASSWORD=music
