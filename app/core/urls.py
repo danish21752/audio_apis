@@ -6,8 +6,9 @@ from core import views
 
 router = DefaultRouter()
 router.register(r"song", views.SongViewSet)
+router.register(r"podcast", views.PodcastViewSet)
 
-app_name = 'song'
+app_name = 'music'
 
 urlpatterns = [
     path("", include(router.urls))

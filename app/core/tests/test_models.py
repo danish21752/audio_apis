@@ -36,3 +36,38 @@ class ModelTests(TestCase):
         )
 
         self.assertEqual(str(song), song.name)
+
+    def test_podcast_file_field(self):
+        """Test creating a new entry in Podcast file is successfull"""
+        name = "pluto"
+        duration = 400
+        uploaded_time = self.time
+        host = 'Danish'
+        participants = ['abc', 'bcd', 'cde']
+        podcast = models.Podcast.objects.create(
+            name=name,
+            duration=duration,
+            uploaded_time=uploaded_time,
+            host=host,
+            participants=participants
+        )
+
+        self.assertEqual(podcast.name, name)
+        self.assertEqual(podcast.host, host)
+
+    def test_podcast_str(self):
+        """Test string repr of podcast"""
+        name = "pluto"
+        duration = 400
+        uploaded_time = self.time
+        host = 'Danish'
+        participants = ['abc', 'bcd', 'cde']
+        podcast = models.Podcast.objects.create(
+            name=name,
+            duration=duration,
+            uploaded_time=uploaded_time,
+            host=host,
+            participants=participants
+        )
+
+        self.assertEqual(str(podcast), podcast.name)

@@ -9,12 +9,12 @@ from rest_framework.test import APIClient
 from core import models
 
 
-CREATE_SONG_URL = reverse('song:song-list')
+CREATE_SONG_URL = reverse('music:song-list')
 
 
 def detail_url(song_id):
     """Return song detail URL"""
-    return reverse("song:song-detail", args=[song_id])
+    return reverse("music:song-detail", args=[song_id])
 
 
 def create_song(**param):
