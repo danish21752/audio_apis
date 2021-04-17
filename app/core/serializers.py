@@ -1,4 +1,4 @@
-from rest_framework import serializers
+from rest_framework import serializers, exceptions
 
 from core.models import Song, Podcast, Audiobook
 
@@ -74,5 +74,12 @@ class MusicSerializer(serializers.Serializer):
             if audioFileType == 2:
                 audiobook = Audiobook.objects.create(**audioFileMetadata)
                 return audiobook
+
+            else:
+                raise exceptions.AuthenticationFailed("Unknown Field Type,"
+                                                      "Valid audioFieldType  "
+                                                      "[ 0 - song, "
+                                                      "1 - podcast, "
+                                                      "2 - audiobook ]")
 
         return None

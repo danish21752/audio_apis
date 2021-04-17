@@ -1,0 +1,635 @@
+{
+	"info": {
+		"_postman_id": "95aeea92-a5fa-4061-abac-0a03587addcd",
+		"name": "Music",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "127.0.0.1:8002/api/song/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "127.0.0.1:8002/api/song/",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8002",
+					"path": [
+						"api",
+						"song",
+						""
+					]
+				},
+				"description": "Get all songs\r\n<audio_type>"
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:8002/api/song/e7504ff0-b5ca-48bf-8452-7ab249aee825/",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Tu hi shab hai\",\r\n    \"duration\": 65\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8002/api/song/e7504ff0-b5ca-48bf-8452-7ab249aee825/",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8002",
+					"path": [
+						"api",
+						"song",
+						"e7504ff0-b5ca-48bf-8452-7ab249aee825",
+						""
+					]
+				},
+				"description": "Update a song\r\n<audio_type>/<audio_id>"
+			},
+			"response": [
+				{
+					"name": "127.0.0.1:8002/api/song/e7504ff0-b5ca-48bf-8452-7ab249aee825/",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Tu hi shab hai\",\r\n    \"duration\": 65\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8002/api/song/e7504ff0-b5ca-48bf-8452-7ab249aee825/",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"song",
+								"e7504ff0-b5ca-48bf-8452-7ab249aee825",
+								""
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "127.0.0.1:8002/api/song/688d4d03-8c93-48a3-ac44-e14c1946d91b/",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "127.0.0.1:8002/api/song/688d4d03-8c93-48a3-ac44-e14c1946d91b/",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8002",
+					"path": [
+						"api",
+						"song",
+						"688d4d03-8c93-48a3-ac44-e14c1946d91b",
+						""
+					]
+				},
+				"description": "Delete a song\r\n<audio_type>/<audio_id>"
+			},
+			"response": [
+				{
+					"name": "127.0.0.1:8002/api/song/688d4d03-8c93-48a3-ac44-e14c1946d91b/",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "127.0.0.1:8002/api/song/688d4d03-8c93-48a3-ac44-e14c1946d91b/",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"song",
+								"688d4d03-8c93-48a3-ac44-e14c1946d91b",
+								""
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "127.0.0.1:8002/api/podcast",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "127.0.0.1:8002/api/podcast",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8002",
+					"path": [
+						"api",
+						"podcast"
+					]
+				},
+				"description": "Get all podcasts\r\n<audio_type>"
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:8002/api/podcast/7bcae017-7edb-4ccc-a7a7-6fc865ead35f/",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"qwer\",\r\n    \"duration\": 122,\r\n    \"host\": \"danish\",\r\n    \"participants\": [\"dan\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8002/api/podcast/7bcae017-7edb-4ccc-a7a7-6fc865ead35f/",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8002",
+					"path": [
+						"api",
+						"podcast",
+						"7bcae017-7edb-4ccc-a7a7-6fc865ead35f",
+						""
+					]
+				},
+				"description": "Update a podcast\r\n<audio_type>/<audio_id>"
+			},
+			"response": [
+				{
+					"name": "127.0.0.1:8002/api/podcast/7bcae017-7edb-4ccc-a7a7-6fc865ead35f/",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"qwer\",\r\n    \"duration\": 122,\r\n    \"host\": \"danish\",\r\n    \"participants\": [\"dan\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8002/api/podcast/7bcae017-7edb-4ccc-a7a7-6fc865ead35f/",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"podcast",
+								"7bcae017-7edb-4ccc-a7a7-6fc865ead35f",
+								""
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "127.0.0.1:8002/api/podcast/7bcae017-7edb-4ccc-a7a7-6fc865ead35f/",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "127.0.0.1:8002/api/podcast/7bcae017-7edb-4ccc-a7a7-6fc865ead35f/",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8002",
+					"path": [
+						"api",
+						"podcast",
+						"7bcae017-7edb-4ccc-a7a7-6fc865ead35f",
+						""
+					]
+				},
+				"description": "Delete a podcast\r\n<audio_type>/<audio_id>"
+			},
+			"response": [
+				{
+					"name": "127.0.0.1:8002/api/podcast/7bcae017-7edb-4ccc-a7a7-6fc865ead35f/",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "127.0.0.1:8002/api/podcast/7bcae017-7edb-4ccc-a7a7-6fc865ead35f/",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"podcast",
+								"7bcae017-7edb-4ccc-a7a7-6fc865ead35f",
+								""
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "127.0.0.1:8002/api/audiobook",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "127.0.0.1:8002/api/audiobook",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8002",
+					"path": [
+						"api",
+						"audiobook"
+					]
+				},
+				"description": "Get all audiobooks\r\n<audio_type>"
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:8002/api/audiobook/fd4a6c94-25b3-43a8-a28f-0979fb26fe15/",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"aaaaaa\",\r\n    \"author\": \"Danishsas\",\r\n    \"narrator\": \"Dasan\",\r\n    \"duration\": 34000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8002/api/audiobook/fd4a6c94-25b3-43a8-a28f-0979fb26fe15/",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8002",
+					"path": [
+						"api",
+						"audiobook",
+						"fd4a6c94-25b3-43a8-a28f-0979fb26fe15",
+						""
+					]
+				},
+				"description": "Update an audiobook\r\n<audio_type>/<audio_id>"
+			},
+			"response": [
+				{
+					"name": "127.0.0.1:8002/api/audiobook/fd4a6c94-25b3-43a8-a28f-0979fb26fe15/",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"aaaaaa\",\r\n    \"author\": \"Danishsas\",\r\n    \"narrator\": \"Dasan\",\r\n    \"duration\": 34000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8002/api/audiobook/fd4a6c94-25b3-43a8-a28f-0979fb26fe15/",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"audiobook",
+								"fd4a6c94-25b3-43a8-a28f-0979fb26fe15",
+								""
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "127.0.0.1:8002/api/audiobook/fd4a6c94-25b3-43a8-a28f-0979fb26fe15/",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "127.0.0.1:8002/api/audiobook/fd4a6c94-25b3-43a8-a28f-0979fb26fe15/",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8002",
+					"path": [
+						"api",
+						"audiobook",
+						"fd4a6c94-25b3-43a8-a28f-0979fb26fe15",
+						""
+					]
+				},
+				"description": "Delete an audiobook\r\n<audio_type>/<audio_id>"
+			},
+			"response": [
+				{
+					"name": "127.0.0.1:8002/api/audiobook/fd4a6c94-25b3-43a8-a28f-0979fb26fe15/",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "127.0.0.1:8002/api/audiobook/fd4a6c94-25b3-43a8-a28f-0979fb26fe15/",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"audiobook",
+								"fd4a6c94-25b3-43a8-a28f-0979fb26fe15",
+								""
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "127.0.0.1:8002/api/music/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"audioFileType\": 0,\r\n    \"audioFileMetadata\": {\r\n        \"name\": \"aaaawwaa\",\r\n        \"duration\": 900\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8002/api/music/",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8002",
+					"path": [
+						"api",
+						"music",
+						""
+					]
+				},
+				"description": "Create an entry for diff audiotypes\r\n<audio_type>/<audio_id>\r\n{\r\n    \"audioFileType\": 0,\r\n    \"audioFileMetadata\": {\r\n        \"name\": \"Hymm for the weekend\",\r\n        \"duration\": 90\r\n    }\r\n}\r\n{\r\n    \"audioFileType\": 1,\r\n    \"audioFileMetadata\": {\r\n        \"name\": \"Kaeel\",\r\n        \"duration\": 60,\r\n        \"host\": \"Danish\",\r\n        \"participants\": [\"ADK\", \"MK\"]\r\n    }\r\n}\r\n{\r\n    \"audioFileType\": 2,\r\n    \"audioFileMetadata\": {\r\n       \"title\": \"Blamer\",\r\n        \"author\": \"Danish\",\r\n        \"narrator\": \"ADK\",\r\n        \"duration\": 30\r\n    }\r\n}"
+			},
+			"response": [
+				{
+					"name": "127.0.0.1:8002/api/music/",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"audioFileType\": 1,\r\n    \"audioFileMetadata\": {\r\n        \"name\": \"aaaa\",\r\n        \"duration\": 60000,\r\n        \"host\": \"danish1123\",\r\n        \"participants\": [\"dan\", \"man\", \"san\", \"im\"]\r\n    }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8002/api/music/",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"music",
+								""
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "127.0.0.1:8002/api/music/",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "Create an entry for diff audiotypes\r\n<audio_type>/<audio_id>\r\n{\r\n    \"audioFileType\": 0,\r\n    \"audioFileMetadata\": {\r\n        \"name\": \"aaaawwaa\",\r\n        \"duration\": 900\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8002/api/music/",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"music",
+								""
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "127.0.0.1:8002/api/music/",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"audioFileType\": 2,\r\n    \"audioFileMetadata\": {\r\n       \"title\": \"aaaaaa\",\r\n        \"author\": \"Danishsas\",\r\n        \"narrator\": \"Dasan\",\r\n        \"duration\": 340\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8002/api/music/",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"music",
+								""
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}
