@@ -71,3 +71,38 @@ class ModelTests(TestCase):
         )
 
         self.assertEqual(str(podcast), podcast.name)
+
+    def test_audiobook_file_field(self):
+        """Test creating a new entry in Podcast file is successfull"""
+        title = 'dino'
+        author = 'Danish'
+        narrator = 'dan'
+        duration = 340
+        uploaded_time = self.time
+        audiobook = models.Audiobook.objects.create(
+            title=title,
+            author=author,
+            narrator=narrator,
+            duration=duration,
+            uploaded_time=uploaded_time
+        )
+
+        self.assertEqual(audiobook.title, title)
+        self.assertEqual(audiobook.duration, duration)
+
+    def test_audiobook_str(self):
+        """Test audiobook string repr"""
+        title = 'dino'
+        author = 'Danish'
+        narrator = 'dan'
+        duration = 340
+        uploaded_time = self.time
+        audiobook = models.Audiobook.objects.create(
+            title=title,
+            author=author,
+            narrator=narrator,
+            duration=duration,
+            uploaded_time=uploaded_time
+        )
+
+        self.assertEqual(str(audiobook), audiobook.title)

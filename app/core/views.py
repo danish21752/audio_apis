@@ -1,8 +1,9 @@
 from rest_framework import mixins, viewsets, status
 from rest_framework.response import Response
 
-from core.serializers import SongSerializer, PodcastSerializer
-from core.models import Song, Podcast
+from core.serializers import SongSerializer, \
+    PodcastSerializer, AudiobookSerializer
+from core.models import Song, Podcast, Audiobook
 
 
 class SongViewSet(
@@ -63,3 +64,24 @@ class PodcastViewSet(
         return Response(
             serializer.data,
             status=status.HTTP_201_CREATED, headers=headers)
+
+
+class AudiobookViewSet(
+    mixins.CreateModelMixin,
+    mixins.RetrieveModelMixin,
+    mixins.ListModelMixin,
+    mixins.UpdateModelMixin,
+    mixins.DestroyModelMixin,
+    viewsets.GenericViewSet,
+):
+    """Handling CRUD ooperations for Audiobook"""
+
+    serializer_class = AudiobookSerializer
+    queryset = Audiobook.objects.all()
+
+    def get_queryset(self):
+        return self.queryset
+
+    def list(self, request, *args, **kwargs):
+        serializer = self.serializer_class(self.queryset, many=True)
+        return Response(serializer.data, status.HTTP_200_OK)

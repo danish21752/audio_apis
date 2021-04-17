@@ -36,3 +36,20 @@ class Podcast(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Audiobook(models.Model):
+    id = models.UUIDField(
+        primary_key=True,
+        default=services.CommonService.generate_id,
+        editable=False,
+        db_index=True,
+    )
+    title = models.CharField(max_length=100, null=False, blank=False)
+    author = models.CharField(max_length=100, null=False, blank=False)
+    narrator = models.CharField(max_length=100, null=False, blank=False)
+    duration = models.IntegerField(default=0, null=False, blank=False)
+    uploaded_time = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title

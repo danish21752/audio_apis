@@ -1,0 +1,70 @@
+import datetime
+
+from django.test import TestCase
+from django.urls import reverse
+
+from rest_framework import status
+from rest_framework.test import APIClient
+
+from core import models
+
+
+CREATE_AUDIOBOOK_URL = reverse('music:audiobook-list')
+
+
+def detail_url(audiobook_id):
+    """Return detail URL for audiobook objects"""
+    return reverse('music:audiobook-detail', args=[audiobook_id])
+
+
+def create_audiobook(**params):
+    """Create and return audiobook object"""
+    return models.Audiobook.objects.create(**params)
+
+
+class AudiobookApiTest(TestCase):
+    """Test audiobook API"""
+
+    def setUp(self):
+        self.client = APIClient()
+        self.time = datetime.datetime.now() + datetime.timedelta(hours=4)
+
+    def test_create_audiobook_successful(self):
+        """Test creating a audiobook is successful"""
+        payload = {
+            'title': 'pokemo',
+            'author': 'Danish',
+            'narrator': 'Dan',
+            'duration': 340,
+            'uploaded_time': self.time
+        }
+
+        response = self.client.post(CREATE_AUDIOBOOK_URL, payload)
+
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+        audiobook = models.Audiobook.objects.filter(**response.data).exists()
+        self.assertTrue(audiobook)
+
+    def test_update_audiobook_successful(self):
+        """Test updating an audiobook object successfull"""
+        audiobook = create_audiobook(
+            title='pokemo',
+            author='Danish',
+            narrator='Dan',
+            duration=340,
+            uploaded_time=self.time
+        )
+
+        payload = {
+            'title': 'pokemo',
+            'author': 'Danish',
+            'narrator': 'Dan',
+            'duration': 400,
+        }
+        url = detail_url(audiobook.id)
+
+        response = self.client.put(url, payload)
+        audiobook.refresh_from_db()
+
+        self.assertEqual(audiobook.title, payload['title'])
+        self.assertEqual(response.data['duration'], payload['duration'])

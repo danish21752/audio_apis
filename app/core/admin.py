@@ -23,5 +23,17 @@ class PodcastAdmin(admin.ModelAdmin):
                     ]
 
 
+class AudiobookAdmin(admin.ModelAdmin):
+    ordering = ['title']
+    list_display = ['id',
+                    'title',
+                    'author',
+                    'narrator',
+                    'duration',
+                    'uploaded_time'
+                    ]
+
+
 admin.site.register(models.Song, SongAdmin)
 admin.site.register(models.Podcast, PodcastAdmin)
+admin.site.register(models.Audiobook, AudiobookAdmin)

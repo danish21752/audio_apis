@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from core.models import Song, Podcast
+from core.models import Song, Podcast, Audiobook
 
 
 class SongSerializer(serializers.ModelSerializer):
@@ -32,6 +32,21 @@ class PodcastSerializer(serializers.ModelSerializer):
         instance.name = validated_data.get("name", instance.name)
         instance.duration = validated_data.get("duration", instance.duration)
         instance.host = validated_data.get("host", instance.host)
-        instance.participants = validated_data.get("participants", instance.participants)
+        instance.participants = validated_data.get(
+            "participants", instance.participants)
         instance.save()
         return instance
+
+
+class AudiobookSerializer(serializers.ModelSerializer):
+    """Serializer for the Audiobook object"""
+
+    class Meta:
+        model = Audiobook
+        fields = ["id",
+                  "title",
+                  "author",
+                  "narrator",
+                  "duration",
+                  "uploaded_time"
+                  ]

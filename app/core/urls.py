@@ -7,6 +7,7 @@ from core import views
 router = DefaultRouter()
 router.register(r"song", views.SongViewSet)
 router.register(r"podcast", views.PodcastViewSet)
+router.register(r"audiobook", views.AudiobookViewSet)
 
 app_name = 'music'
 
