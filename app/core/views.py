@@ -2,7 +2,8 @@ from rest_framework import mixins, viewsets, status
 from rest_framework.response import Response
 
 from core.serializers import SongSerializer, \
-    PodcastSerializer, AudiobookSerializer
+    PodcastSerializer, AudiobookSerializer, \
+    MusicSerializer
 from core.models import Song, Podcast, Audiobook
 
 
@@ -16,14 +17,15 @@ class SongViewSet(
 ):
     """Handling CRUD operations for Song object"""
 
-    serializer_class = SongSerializer
     queryset = Song.objects.all()
+    serializer_class = SongSerializer
 
     def get_queryset(self):
-        return self.queryset
+        _queryset = Song.objects.all()
+        return _queryset
 
     def list(self, request, *args, **kwargs):
-        serializer = self.serializer_class(self.queryset, many=True)
+        serializer = self.serializer_class(self.get_queryset(), many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     def update(self, request, *args, **kwargs):
@@ -50,10 +52,11 @@ class PodcastViewSet(
     queryset = Podcast.objects.all()
 
     def get_queryset(self):
-        return self.queryset
+        _queryset = Podcast.objects.all()
+        return _queryset
 
     def list(self, request, *args, **kwargs):
-        serializer = self.serializer_class(self.queryset, many=True)
+        serializer = self.serializer_class(self.get_queryset(), many=True)
         return Response(serializer.data, status.HTTP_200_OK)
 
     def create(self, request, *args, **kwargs):
@@ -80,8 +83,27 @@ class AudiobookViewSet(
     queryset = Audiobook.objects.all()
 
     def get_queryset(self):
-        return self.queryset
+        _queryset = Audiobook.objects.all()
+        return _queryset
 
     def list(self, request, *args, **kwargs):
-        serializer = self.serializer_class(self.queryset, many=True)
+        serializer = self.serializer_class(self.get_queryset(), many=True)
         return Response(serializer.data, status.HTTP_200_OK)
+
+
+class MusicViewSet(mixins.CreateModelMixin,
+                   viewsets.GenericViewSet):
+    """Handling create operation for diff Music types"""
+
+    serializer_class = MusicSerializer
+
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        if serializer.is_valid():
+            serializer.create(serializer.validated_data)
+            headers = self.get_success_headers(serializer.data)
+            return Response(
+                "Created",
+                status=status.HTTP_201_CREATED, headers=headers)
+        else:
+            return Response(serializer.errors, status=status.HTTP_200_OK)

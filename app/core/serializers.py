@@ -50,3 +50,29 @@ class AudiobookSerializer(serializers.ModelSerializer):
                   "duration",
                   "uploaded_time"
                   ]
+
+
+class MusicSerializer(serializers.Serializer):
+    """Serializer for music object"""
+
+    audioFileType = serializers.IntegerField(required=True)
+    audioFileMetadata = serializers.JSONField()
+
+    def create(self, validated_data):
+        audioFileType = validated_data.get('audioFileType', 0)
+        audioFileMetadata = validated_data.get('audioFileMetadata', None)
+
+        if audioFileMetadata is not None:
+            if audioFileType == 0:
+                song = Song.objects.create(**audioFileMetadata)
+                return song
+
+            if audioFileType == 1:
+                podcast = Podcast.objects.create(**audioFileMetadata)
+                return podcast
+
+            if audioFileType == 2:
+                audiobook = Audiobook.objects.create(**audioFileMetadata)
+                return audiobook
+
+        return None
